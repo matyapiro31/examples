@@ -28,7 +28,7 @@ bool CreateScene(FbxManager* /*pSdkManager*/, FbxScene* pScene) //pSdkManageer�
     val = lAnimLayer->GetBlendModeBypass((EFbxType)120);    // invalid type (>MAX_TYPES), val = false
 
 
-    // we want to animate the layer's weight property.レイヤーのウェイトのプロパティを描画したい場合
+    // we want to animate the layer's weight property.
     FbxAnimCurveNode* wcn = lAnimLayer->CreateCurveNode(lAnimLayer->Weight);
     if (wcn)
     {
@@ -162,9 +162,9 @@ bool CreateScene(FbxManager* /*pSdkManager*/, FbxScene* pScene) //pSdkManageer�
     }
 
     /* 
-       基本となるレイヤーはウェイトカーブを持ちます:
+       The base layer has a weight curve:
 
-              時間     |     0       |       1        |      2       |
+              Time     |     0       |       1        |      2       |
         Weight         +-------------+----------------+--------------| 
            Base Layer  |     0.0     |     100.0%     |    (100.0%)  | 
            Layer2      |   <100.0%>  |    <100.0%>    |    <100.0%>  |
@@ -176,7 +176,7 @@ bool CreateScene(FbxManager* /*pSdkManager*/, FbxScene* pScene) //pSdkManageer�
         
         At the specified times each channel value on their respective layers is:
 
-             時間     |     0       |       1        |      2       |
+             Time     |     0       |       1        |      2       |
         Channel       +-------------+----------------+--------------|
             0  Base   |     0*      |       1.1*     |    1.1*      |  
                Layer2 |    (3.33)   |      3.33      |    6.66      | (curve2)
